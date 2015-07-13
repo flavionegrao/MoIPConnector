@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72D91C431B51DAC300F0DB9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C421B51DAC300F0DB9E /* main.m */; };
+		72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C451B51DAC300F0DB9E /* AppDelegate.m */; };
+		72D91C491B51DAC300F0DB9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C481B51DAC300F0DB9E /* ViewController.m */; };
+		72D91C4C1B51DAC300F0DB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4A1B51DAC300F0DB9E /* Main.storyboard */; };
+		72D91C4E1B51DAC300F0DB9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4D1B51DAC300F0DB9E /* Images.xcassets */; };
+		72D91C511B51DAC300F0DB9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4F1B51DAC300F0DB9E /* LaunchScreen.xib */; };
+		72D91C5D1B51DAC300F0DB9E /* MoIPConnectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C5C1B51DAC300F0DB9E /* MoIPConnectorTests.m */; };
+		72D91C691B51DC6400F0DB9E /* MoipConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C681B51DC6400F0DB9E /* MoipConnector.m */; };
+		72D91C6C1B51DCC800F0DB9E /* MoIPInfoDePagamento.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C6B1B51DCC800F0DB9E /* MoIPInfoDePagamento.m */; };
+		72D91C6F1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C6E1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m */; };
+		72D91C721B51DD9800F0DB9E /* MoIPStatusDoPagamento.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C711B51DD9800F0DB9E /* MoIPStatusDoPagamento.m */; };
+		72D91C751B52BF3000F0DB9E /* MoIPCartaoDeCredito.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C741B52BF3000F0DB9E /* MoIPCartaoDeCredito.m */; };
+		72D91C781B52C07000F0DB9E /* MoIPPortadorDoCartao.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C771B52C07000F0DB9E /* MoIPPortadorDoCartao.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72D91C571B51DAC300F0DB9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72D91C351B51DAC300F0DB9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72D91C3C1B51DAC300F0DB9E;
+			remoteInfo = MoIPConnector;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		72D91C3D1B51DAC300F0DB9E /* MoIPConnector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoIPConnector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72D91C411B51DAC300F0DB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72D91C421B51DAC300F0DB9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		72D91C441B51DAC300F0DB9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		72D91C451B51DAC300F0DB9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		72D91C471B51DAC300F0DB9E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		72D91C481B51DAC300F0DB9E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		72D91C4B1B51DAC300F0DB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72D91C4D1B51DAC300F0DB9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		72D91C501B51DAC300F0DB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		72D91C561B51DAC300F0DB9E /* MoIPConnectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoIPConnectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72D91C5B1B51DAC300F0DB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72D91C5C1B51DAC300F0DB9E /* MoIPConnectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoIPConnectorTests.m; sourceTree = "<group>"; };
+		72D91C671B51DC6400F0DB9E /* MoipConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoipConnector.h; sourceTree = "<group>"; };
+		72D91C681B51DC6400F0DB9E /* MoipConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoipConnector.m; sourceTree = "<group>"; };
+		72D91C6A1B51DCC800F0DB9E /* MoIPInfoDePagamento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPInfoDePagamento.h; sourceTree = "<group>"; };
+		72D91C6B1B51DCC800F0DB9E /* MoIPInfoDePagamento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPInfoDePagamento.m; sourceTree = "<group>"; };
+		72D91C6D1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPMetodoDePagamento.h; sourceTree = "<group>"; };
+		72D91C6E1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPMetodoDePagamento.m; sourceTree = "<group>"; };
+		72D91C701B51DD9800F0DB9E /* MoIPStatusDoPagamento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPStatusDoPagamento.h; sourceTree = "<group>"; };
+		72D91C711B51DD9800F0DB9E /* MoIPStatusDoPagamento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPStatusDoPagamento.m; sourceTree = "<group>"; };
+		72D91C731B52BF3000F0DB9E /* MoIPCartaoDeCredito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPCartaoDeCredito.h; sourceTree = "<group>"; };
+		72D91C741B52BF3000F0DB9E /* MoIPCartaoDeCredito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPCartaoDeCredito.m; sourceTree = "<group>"; };
+		72D91C761B52C07000F0DB9E /* MoIPPortadorDoCartao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPPortadorDoCartao.h; sourceTree = "<group>"; };
+		72D91C771B52C07000F0DB9E /* MoIPPortadorDoCartao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPPortadorDoCartao.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72D91C3A1B51DAC300F0DB9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72D91C531B51DAC300F0DB9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72D91C341B51DAC300F0DB9E = {
+			isa = PBXGroup;
+			children = (
+				72D91C661B51DB8000F0DB9E /* MoIPConnector */,
+				72D91C3F1B51DAC300F0DB9E /* MoIPConnectorDemo */,
+				72D91C591B51DAC300F0DB9E /* MoIPConnectorTests */,
+				72D91C3E1B51DAC300F0DB9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		72D91C3E1B51DAC300F0DB9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72D91C3D1B51DAC300F0DB9E /* MoIPConnector.app */,
+				72D91C561B51DAC300F0DB9E /* MoIPConnectorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72D91C3F1B51DAC300F0DB9E /* MoIPConnectorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				72D91C441B51DAC300F0DB9E /* AppDelegate.h */,
+				72D91C451B51DAC300F0DB9E /* AppDelegate.m */,
+				72D91C471B51DAC300F0DB9E /* ViewController.h */,
+				72D91C481B51DAC300F0DB9E /* ViewController.m */,
+				72D91C4A1B51DAC300F0DB9E /* Main.storyboard */,
+				72D91C4D1B51DAC300F0DB9E /* Images.xcassets */,
+				72D91C4F1B51DAC300F0DB9E /* LaunchScreen.xib */,
+				72D91C401B51DAC300F0DB9E /* Supporting Files */,
+			);
+			path = MoIPConnectorDemo;
+			sourceTree = "<group>";
+		};
+		72D91C401B51DAC300F0DB9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				72D91C411B51DAC300F0DB9E /* Info.plist */,
+				72D91C421B51DAC300F0DB9E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		72D91C591B51DAC300F0DB9E /* MoIPConnectorTests */ = {
+			isa = PBXGroup;
+			children = (
+				72D91C5C1B51DAC300F0DB9E /* MoIPConnectorTests.m */,
+				72D91C5A1B51DAC300F0DB9E /* Supporting Files */,
+			);
+			path = MoIPConnectorTests;
+			sourceTree = "<group>";
+		};
+		72D91C5A1B51DAC300F0DB9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				72D91C5B1B51DAC300F0DB9E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		72D91C661B51DB8000F0DB9E /* MoIPConnector */ = {
+			isa = PBXGroup;
+			children = (
+				72D91C671B51DC6400F0DB9E /* MoipConnector.h */,
+				72D91C681B51DC6400F0DB9E /* MoipConnector.m */,
+				72D91C791B53FFF700F0DB9E /* MoIP Objects */,
+			);
+			path = MoIPConnector;
+			sourceTree = "<group>";
+		};
+		72D91C791B53FFF700F0DB9E /* MoIP Objects */ = {
+			isa = PBXGroup;
+			children = (
+				72D91C701B51DD9800F0DB9E /* MoIPStatusDoPagamento.h */,
+				72D91C711B51DD9800F0DB9E /* MoIPStatusDoPagamento.m */,
+				72D91C6A1B51DCC800F0DB9E /* MoIPInfoDePagamento.h */,
+				72D91C6B1B51DCC800F0DB9E /* MoIPInfoDePagamento.m */,
+				72D91C6D1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.h */,
+				72D91C6E1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m */,
+				72D91C731B52BF3000F0DB9E /* MoIPCartaoDeCredito.h */,
+				72D91C741B52BF3000F0DB9E /* MoIPCartaoDeCredito.m */,
+				72D91C761B52C07000F0DB9E /* MoIPPortadorDoCartao.h */,
+				72D91C771B52C07000F0DB9E /* MoIPPortadorDoCartao.m */,
+			);
+			name = "MoIP Objects";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72D91C3C1B51DAC300F0DB9E /* MoIPConnector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72D91C601B51DAC300F0DB9E /* Build configuration list for PBXNativeTarget "MoIPConnector" */;
+			buildPhases = (
+				72D91C391B51DAC300F0DB9E /* Sources */,
+				72D91C3A1B51DAC300F0DB9E /* Frameworks */,
+				72D91C3B1B51DAC300F0DB9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoIPConnector;
+			productName = MoIPConnector;
+			productReference = 72D91C3D1B51DAC300F0DB9E /* MoIPConnector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		72D91C551B51DAC300F0DB9E /* MoIPConnectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72D91C631B51DAC300F0DB9E /* Build configuration list for PBXNativeTarget "MoIPConnectorTests" */;
+			buildPhases = (
+				72D91C521B51DAC300F0DB9E /* Sources */,
+				72D91C531B51DAC300F0DB9E /* Frameworks */,
+				72D91C541B51DAC300F0DB9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72D91C581B51DAC300F0DB9E /* PBXTargetDependency */,
+			);
+			name = MoIPConnectorTests;
+			productName = MoIPConnectorTests;
+			productReference = 72D91C561B51DAC300F0DB9E /* MoIPConnectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72D91C351B51DAC300F0DB9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Apetis;
+				TargetAttributes = {
+					72D91C3C1B51DAC300F0DB9E = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					72D91C551B51DAC300F0DB9E = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 72D91C3C1B51DAC300F0DB9E;
+					};
+				};
+			};
+			buildConfigurationList = 72D91C381B51DAC300F0DB9E /* Build configuration list for PBXProject "MoIPConnector" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 72D91C341B51DAC300F0DB9E;
+			productRefGroup = 72D91C3E1B51DAC300F0DB9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72D91C3C1B51DAC300F0DB9E /* MoIPConnector */,
+				72D91C551B51DAC300F0DB9E /* MoIPConnectorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72D91C3B1B51DAC300F0DB9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72D91C4C1B51DAC300F0DB9E /* Main.storyboard in Resources */,
+				72D91C511B51DAC300F0DB9E /* LaunchScreen.xib in Resources */,
+				72D91C4E1B51DAC300F0DB9E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72D91C541B51DAC300F0DB9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72D91C391B51DAC300F0DB9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72D91C6C1B51DCC800F0DB9E /* MoIPInfoDePagamento.m in Sources */,
+				72D91C491B51DAC300F0DB9E /* ViewController.m in Sources */,
+				72D91C751B52BF3000F0DB9E /* MoIPCartaoDeCredito.m in Sources */,
+				72D91C721B51DD9800F0DB9E /* MoIPStatusDoPagamento.m in Sources */,
+				72D91C6F1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m in Sources */,
+				72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */,
+				72D91C691B51DC6400F0DB9E /* MoipConnector.m in Sources */,
+				72D91C781B52C07000F0DB9E /* MoIPPortadorDoCartao.m in Sources */,
+				72D91C431B51DAC300F0DB9E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72D91C521B51DAC300F0DB9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72D91C5D1B51DAC300F0DB9E /* MoIPConnectorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72D91C581B51DAC300F0DB9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72D91C3C1B51DAC300F0DB9E /* MoIPConnector */;
+			targetProxy = 72D91C571B51DAC300F0DB9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		72D91C4A1B51DAC300F0DB9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72D91C4B1B51DAC300F0DB9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		72D91C4F1B51DAC300F0DB9E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72D91C501B51DAC300F0DB9E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		72D91C5E1B51DAC300F0DB9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		72D91C5F1B51DAC300F0DB9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72D91C611B51DAC300F0DB9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MoIPConnectorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		72D91C621B51DAC300F0DB9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MoIPConnectorDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		72D91C641B51DAC300F0DB9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MoIPConnectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoIPConnector.app/MoIPConnector";
+			};
+			name = Debug;
+		};
+		72D91C651B51DAC300F0DB9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MoIPConnectorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoIPConnector.app/MoIPConnector";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72D91C381B51DAC300F0DB9E /* Build configuration list for PBXProject "MoIPConnector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72D91C5E1B51DAC300F0DB9E /* Debug */,
+				72D91C5F1B51DAC300F0DB9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72D91C601B51DAC300F0DB9E /* Build configuration list for PBXNativeTarget "MoIPConnector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72D91C611B51DAC300F0DB9E /* Debug */,
+				72D91C621B51DAC300F0DB9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		72D91C631B51DAC300F0DB9E /* Build configuration list for PBXNativeTarget "MoIPConnectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72D91C641B51DAC300F0DB9E /* Debug */,
+				72D91C651B51DAC300F0DB9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72D91C351B51DAC300F0DB9E /* Project object */;
+}
