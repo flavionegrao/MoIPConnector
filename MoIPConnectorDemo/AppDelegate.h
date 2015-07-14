@@ -15,6 +15,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong,readonly,nonatomic) NSString* myMoipToken;
+@property (strong,readonly,nonatomic) NSString* myMoipAccessKey;
+
 
 @end
 

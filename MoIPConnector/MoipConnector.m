@@ -12,14 +12,11 @@
 
 #import "MoipConnector.h"
 
-static NSString* const MoIPSandboxServerURL = @"https://desenvolvedor.moip.com.br";
+static NSString* const MoIPSandboxServerURL = @"https://desenvolvedor.moip.com.br/sandbox/";
 static NSString* const MoIPServerURL = @"https://www.moip.com.br";
 
-static NSString* const MoipSandBoxInstrucaoUnicaURL =  @"sandbox/ws/alpha/EnviarInstrucao/Unica";
-static NSString* const MoipSandBoxPagamentoURL =       @"sandbox/rest/pagamento";
-
-static NSString* const MoipInstrucaoUnicaURL =  @"ws/alpha/EnviarInstrucao/Unica";
-static NSString* const MoipPagamentoURL =       @"rest/pagamento";
+static NSString* const MoipInstrucaoUnicaPath =  @"ws/alpha/EnviarInstrucao/Unica";
+static NSString* const MoipPagamentoPath =       @"rest/pagamento";
 
 
 // tags XML
@@ -86,6 +83,13 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
     }
 }
 
+- (NSURL*) urlDePagamentoWithToken:(NSString *)tokenDePagamento {
+    NSString* urlString =  [NSString stringWithFormat:@"%@Instrucao.do?token=%@",
+                            [self urlFromMoIPEnvironement:self.environement],
+                            tokenDePagamento];
+    return [NSURL URLWithString:urlString];
+}
+
 #pragma mark - Getter and Setters
 
 - (NSURLSession*) session {
@@ -120,10 +124,8 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
 - (void) paymentRegisterWithInfo:(MoIPInfoDePagamento*) paymentInfo
               completion: (void (^) (NSString* token, NSError* error)) completionBlock {
     
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    NSAssert(completionBlock, @"completionBlock can't be nil");
-    
-    NSMutableURLRequest* request = [self requestForURL:[self urlForInstrucaoUnica] paymentInfo:paymentInfo];
+    NSURL* requestURL = [NSURL URLWithString:MoipInstrucaoUnicaPath relativeToURL:self.serverURL];
+    NSMutableURLRequest* request = [self requestForURL:requestURL paymentInfo:paymentInfo];
     
     NSURLSessionDataTask* task = [self xmlTaskWithRequest:request completionHandler:^(NSData *xml, NSError *error) {
         
@@ -179,12 +181,9 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
                   token:(NSString *)token
              completion: (void (^) (MoIPStatusDoPagamento* paymentStatus, NSError* error)) completionBlock {
     
+    NSMutableString *queryString = [[NSMutableString alloc] initWithString:@"callback=callback&pagamentoWidget="];
     
-    NSAssert(completionBlock, @"completionBlock can't be nil");
-    
-    NSMutableString *queryString = [[NSMutableString alloc] initWithString:@"callback=omnichat&pagamentoWidget="];
-    
-    NSDictionary *paymentWidget = @{@"pagamentoWidget":@{@"referer":@"omnichat",
+    NSDictionary *paymentWidget = @{@"pagamentoWidget":@{@"referer":@"callback",
                                                          @"token":token,
                                                          @"dadosPagamento":[paymentMethod dictionaryRepresentation]}};
     
@@ -206,20 +205,13 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
     // timestamp in miliseconds since 1970
     [queryString appendFormat:@"&_=%0.f", [[NSDate date] timeIntervalSince1970] * 1000];
     
-    NSString* path;
-    if (self.environement == MoIPEnvironmentSandBox) {
-        path = MoipSandBoxPagamentoURL;
-    } else {
-        path = MoipPagamentoURL;
-    }
-    
-    NSString *urlString = [NSString stringWithFormat:@"%@?%@", path, queryString];
+    NSString *urlString = [NSString stringWithFormat:@"%@?%@", MoipPagamentoPath, queryString];
     NSURL* requestURL = [NSURL URLWithString:urlString relativeToURL:self.serverURL];
     NSURLRequest* request = [[NSURLRequest alloc] initWithURL:requestURL];
     
     NSURLSessionDataTask* task = [self moIPJSONTaskWithRequest:request completionHandler:^(NSDictionary* json, NSError *error) {
         if (!error) {
-            MoIPStatusDoPagamento* paymentStatus = [[MoIPStatusDoPagamento alloc]initWithDictionary:json];
+            MoIPStatusDoPagamento* paymentStatus = [[MoIPStatusDoPagamento alloc]initWithDictionary:json tokenDePagamento:token];
             if (completionBlock) completionBlock(paymentStatus,nil);
         } else {
             if (completionBlock) completionBlock(nil,error);
@@ -272,9 +264,9 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
             return;
         }
         
-        NSString *str = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
-        NSData* xml = [str dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-        completionHandler(xml,nil);
+        NSString *responseXMLString = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+        NSData* responseXMLData = [responseXMLString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+        completionHandler(responseXMLData,nil);
     }];
     
     return task;
@@ -335,16 +327,6 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
         if (error) *error = jsonParseError;
         return nil;
     }
-}
-
-- (NSURL*) urlForInstrucaoUnica {
-    NSString* path;
-    if (self.environement == MoIPEnvironmentSandBox) {
-        path = MoipSandBoxInstrucaoUnicaURL;
-    } else {
-        path = MoipInstrucaoUnicaURL;
-    }
-    return [NSURL URLWithString:path relativeToURL:self.serverURL];
 }
 
 

@@ -29,7 +29,14 @@ typedef NS_ENUM(NSInteger, MoIPStatus) {
     MoIPStatusNaoInformado = 999 //Caso não seja informado na resposta do MoIP
 };
 
+
 @interface MoIPStatusDoPagamento : NSObject
+
+- (instancetype) initWithDictionary:(NSDictionary*) dictionary
+                   tokenDePagamento:(NSString*) token NS_DESIGNATED_INITIALIZER;
+
+/// Token usando para identificação do Pagamento
+@property (nonatomic, strong, readonly) NSString* tokenDePagamento;
 
 /// Status de processamento da requisição de pagamento
 @property (nonatomic, assign, readonly) MoIPStatusPagamento statusDoPagamento;
@@ -44,7 +51,7 @@ typedef NS_ENUM(NSInteger, MoIPStatus) {
 @property (nonatomic, assign, readonly) NSNumber* codigo;
 
 /// Mensagem descritiva sobre o processamento da transação
-@property (nonatomic, strong, readonly) NSString* menssagem;
+@property (nonatomic, strong, readonly) NSString* mensagem;
 
 /// Taxa Moip cobrada pela prestação de serviço
 @property (nonatomic, strong, readonly) NSNumber* taxaMoIP;
@@ -55,7 +62,5 @@ typedef NS_ENUM(NSInteger, MoIPStatus) {
 /// Motivo de cancelamento de um pagamento
 @property (nonatomic, strong, readonly) NSDictionary* classificacao;
 
-
-- (instancetype) initWithDictionary:(NSDictionary*) dictionary;
 
 @end

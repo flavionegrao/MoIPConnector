@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7279C0DC1B55225800972482 /* BoletoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DB1B55225800972482 /* BoletoViewController.m */; };
+		7279C0DF1B553DD700972482 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DE1B553DD700972482 /* WebViewController.m */; };
 		72D91C431B51DAC300F0DB9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C421B51DAC300F0DB9E /* main.m */; };
 		72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C451B51DAC300F0DB9E /* AppDelegate.m */; };
-		72D91C491B51DAC300F0DB9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C481B51DAC300F0DB9E /* ViewController.m */; };
 		72D91C4C1B51DAC300F0DB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4A1B51DAC300F0DB9E /* Main.storyboard */; };
 		72D91C4E1B51DAC300F0DB9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4D1B51DAC300F0DB9E /* Images.xcassets */; };
 		72D91C511B51DAC300F0DB9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4F1B51DAC300F0DB9E /* LaunchScreen.xib */; };
@@ -33,13 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7279C0DA1B55225800972482 /* BoletoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoletoViewController.h; sourceTree = "<group>"; };
+		7279C0DB1B55225800972482 /* BoletoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoletoViewController.m; sourceTree = "<group>"; };
+		7279C0DD1B553DD700972482 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		7279C0DE1B553DD700972482 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		72D91C3D1B51DAC300F0DB9E /* MoIPConnector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoIPConnector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72D91C411B51DAC300F0DB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72D91C421B51DAC300F0DB9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72D91C441B51DAC300F0DB9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		72D91C451B51DAC300F0DB9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		72D91C471B51DAC300F0DB9E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		72D91C481B51DAC300F0DB9E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		72D91C4B1B51DAC300F0DB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72D91C4D1B51DAC300F0DB9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		72D91C501B51DAC300F0DB9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -100,11 +103,13 @@
 		72D91C3F1B51DAC300F0DB9E /* MoIPConnectorDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7279C0DA1B55225800972482 /* BoletoViewController.h */,
+				7279C0DB1B55225800972482 /* BoletoViewController.m */,
 				72D91C441B51DAC300F0DB9E /* AppDelegate.h */,
 				72D91C451B51DAC300F0DB9E /* AppDelegate.m */,
-				72D91C471B51DAC300F0DB9E /* ViewController.h */,
-				72D91C481B51DAC300F0DB9E /* ViewController.m */,
 				72D91C4A1B51DAC300F0DB9E /* Main.storyboard */,
+				7279C0DD1B553DD700972482 /* WebViewController.h */,
+				7279C0DE1B553DD700972482 /* WebViewController.m */,
 				72D91C4D1B51DAC300F0DB9E /* Images.xcassets */,
 				72D91C4F1B51DAC300F0DB9E /* LaunchScreen.xib */,
 				72D91C401B51DAC300F0DB9E /* Supporting Files */,
@@ -266,13 +271,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D91C6C1B51DCC800F0DB9E /* MoIPInfoDePagamento.m in Sources */,
-				72D91C491B51DAC300F0DB9E /* ViewController.m in Sources */,
+				7279C0DF1B553DD700972482 /* WebViewController.m in Sources */,
 				72D91C751B52BF3000F0DB9E /* MoIPCartaoDeCredito.m in Sources */,
 				72D91C721B51DD9800F0DB9E /* MoIPStatusDoPagamento.m in Sources */,
 				72D91C6F1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m in Sources */,
 				72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */,
 				72D91C691B51DC6400F0DB9E /* MoipConnector.m in Sources */,
 				72D91C781B52C07000F0DB9E /* MoIPPortadorDoCartao.m in Sources */,
+				7279C0DC1B55225800972482 /* BoletoViewController.m in Sources */,
 				72D91C431B51DAC300F0DB9E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +474,7 @@
 				72D91C621B51DAC300F0DB9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72D91C631B51DAC300F0DB9E /* Build configuration list for PBXNativeTarget "MoIPConnectorTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +483,7 @@
 				72D91C651B51DAC300F0DB9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -70,5 +70,7 @@ typedef NS_ENUM(NSInteger, MoipConnectorErrorCode) {
                           paymentMethod:(MoIPMetodoDePagamento*) paymentoMethod
                              completion:(void (^)(MoIPStatusDoPagamento* paymentStatus, NSError* error))completionBlock;
 
+- (NSURL*) urlDePagamentoWithToken:(NSString*) tokenDePagamento;
+
 
 @end
