@@ -22,8 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // MoIP Token e Access Key
-    _myMoipToken = @"";
-    _myMoipAccessKey = @"";
+    _myMoipToken = @"8GQT3CIJNF95RT4V0FTN8ARYYHD3UK6L";
+    _myMoipAccessKey = @"RYZ8ZL4CVFRUNNAIZ2VJSPRUZQLTXYIONVQGMN7Q";
     
     NSAssert(_myMoipToken.length > 0 && _myMoipAccessKey.length > 0, @"Inclua seu token e access key do MoIP");
     

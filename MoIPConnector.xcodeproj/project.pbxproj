@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7279C0DC1B55225800972482 /* BoletoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DB1B55225800972482 /* BoletoViewController.m */; };
 		7279C0DF1B553DD700972482 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DE1B553DD700972482 /* WebViewController.m */; };
+		7279C0E21B554B1300972482 /* CartaoDeCreditoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0E11B554B1300972482 /* CartaoDeCreditoViewController.m */; };
 		72D91C431B51DAC300F0DB9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C421B51DAC300F0DB9E /* main.m */; };
 		72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C451B51DAC300F0DB9E /* AppDelegate.m */; };
 		72D91C4C1B51DAC300F0DB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4A1B51DAC300F0DB9E /* Main.storyboard */; };
@@ -38,6 +39,8 @@
 		7279C0DB1B55225800972482 /* BoletoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoletoViewController.m; sourceTree = "<group>"; };
 		7279C0DD1B553DD700972482 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		7279C0DE1B553DD700972482 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		7279C0E01B554B1300972482 /* CartaoDeCreditoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartaoDeCreditoViewController.h; sourceTree = "<group>"; };
+		7279C0E11B554B1300972482 /* CartaoDeCreditoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartaoDeCreditoViewController.m; sourceTree = "<group>"; };
 		72D91C3D1B51DAC300F0DB9E /* MoIPConnector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoIPConnector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72D91C411B51DAC300F0DB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72D91C421B51DAC300F0DB9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,11 +106,13 @@
 		72D91C3F1B51DAC300F0DB9E /* MoIPConnectorDemo */ = {
 			isa = PBXGroup;
 			children = (
-				7279C0DA1B55225800972482 /* BoletoViewController.h */,
-				7279C0DB1B55225800972482 /* BoletoViewController.m */,
 				72D91C441B51DAC300F0DB9E /* AppDelegate.h */,
 				72D91C451B51DAC300F0DB9E /* AppDelegate.m */,
 				72D91C4A1B51DAC300F0DB9E /* Main.storyboard */,
+				7279C0E01B554B1300972482 /* CartaoDeCreditoViewController.h */,
+				7279C0E11B554B1300972482 /* CartaoDeCreditoViewController.m */,
+				7279C0DA1B55225800972482 /* BoletoViewController.h */,
+				7279C0DB1B55225800972482 /* BoletoViewController.m */,
 				7279C0DD1B553DD700972482 /* WebViewController.h */,
 				7279C0DE1B553DD700972482 /* WebViewController.m */,
 				72D91C4D1B51DAC300F0DB9E /* Images.xcassets */,
@@ -277,6 +282,7 @@
 				72D91C6F1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m in Sources */,
 				72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */,
 				72D91C691B51DC6400F0DB9E /* MoipConnector.m in Sources */,
+				7279C0E21B554B1300972482 /* CartaoDeCreditoViewController.m in Sources */,
 				72D91C781B52C07000F0DB9E /* MoIPPortadorDoCartao.m in Sources */,
 				7279C0DC1B55225800972482 /* BoletoViewController.m in Sources */,
 				72D91C431B51DAC300F0DB9E /* main.m in Sources */,
