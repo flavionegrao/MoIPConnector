@@ -17,6 +17,7 @@
 
 @property (strong,readonly,nonatomic) NSString* myMoipToken;
 @property (strong,readonly,nonatomic) NSString* myMoipAccessKey;
+@property (strong,readonly,nonatomic) NSString* myPublicKey;
 
 
 @end

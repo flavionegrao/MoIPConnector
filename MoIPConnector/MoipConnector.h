@@ -12,10 +12,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MoIPInfoDePagamento.h"
-#import "MoIPMetodoDePagamento.h"
-#import "MoIPStatusDoPagamento.h"
-
+#import "MoIPOrder.h"
+#import "MoIPPayment.h"
 
 typedef NS_ENUM(NSInteger, MoIPEnvironment) {
     MoIPEnvironmentSandBox,
@@ -57,18 +55,20 @@ typedef NS_ENUM(NSInteger, MoipConnectorErrorCode) {
  */
 - (instancetype) initWithEnviroment:(MoIPEnvironment) enviroment
                               token:(NSString*) token
-                          accessKey:(NSString*) accessKey NS_DESIGNATED_INITIALIZER;
+                          accessKey:(NSString*) accessKey
+                  publicCertificate:(NSString*) publicCertificate NS_DESIGNATED_INITIALIZER;
+
 
 /**
  Identify and executes a payment transaction asynchronously.
- @param MoIPInfoDePagamento Indentifies the payment
- @param MoIPMetodoDePagamento Idenitifies how the payment method
+ @param MoIPOrder Indentifies the payment
+ @param MoIPPayment Idenitifies the payment method
  @param completion The completion handler that will be called upon the transaction completion.
  
  */
-- (void) executePaymentWithPaymenInfo:(MoIPInfoDePagamento*) paymentInfo
-                          paymentMethod:(MoIPMetodoDePagamento*) paymentoMethod
-                             completion:(void (^)(MoIPStatusDoPagamento* paymentStatus, NSError* error))completionBlock;
+- (void) executeOrder:(MoIPOrder*) order
+          withPayment:(MoIPPayment*) payment
+    completionhandler:(void (^)(MoIPOrder* orderAnswer, MoIPPayment* paymentAnwer, NSError* error))completionBlock;
 
 - (NSURL*) urlDePagamentoWithToken:(NSString*) tokenDePagamento;
 
