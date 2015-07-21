@@ -87,4 +87,4 @@ MoipConnector* connector = [[MoipConnector alloc]
  
  There is a demo app that ilustrates how to use it as well as few unit tests.
  
-Disclaimer: I don't have any relationship, interest or connection with MoIP.
+###Disclaimer: I don't have any relationship, interest or connection with MoIP.
