@@ -17,5 +17,6 @@
 @property (nonatomic, strong) NSNumber* first6;
 @property (nonatomic, strong) NSNumber* last4;
 @property (nonatomic, strong) MoIPHolder* holder;
-
+@property (nonatomic, strong) NSString* objectId;
+@property (nonatomic, strong) NSString* brand;
 @end

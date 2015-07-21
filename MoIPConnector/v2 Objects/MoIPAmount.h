@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "MoIPSerializable.h"
 
-struct MoIPSubTotals {
+struct MoIPSubtotals {
     float shipping;
     float adition;
     float discount;
     float items;
 };
-typedef struct MoIPSubTotals MoIPSubTotals;
+typedef struct MoIPSubtotals MoIPSubtotals;
 
-static inline MoIPSubTotals MoIPSubTotalsMake (float shipping, float adition, float discount,  float items) {
-    MoIPSubTotals subTotals;
+static inline MoIPSubtotals MoIPSubtotalsMake (float shipping, float adition, float discount,  float items) {
+    MoIPSubtotals subTotals;
     subTotals.shipping = shipping;
     subTotals.adition = adition;
     subTotals.discount = discount;
@@ -35,6 +35,6 @@ static inline MoIPSubTotals MoIPSubTotalsMake (float shipping, float adition, fl
 @property (nonatomic, strong) NSNumber* liquid;
 @property (nonatomic, strong) NSNumber* otherReceivers;
 @property (nonatomic, strong) NSString* currency;
-@property (nonatomic, assign) MoIPSubTotals subTotals;
+@property (nonatomic, assign) MoIPSubtotals subtotals;
 
 @end

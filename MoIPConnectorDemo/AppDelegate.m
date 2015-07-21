@@ -21,7 +21,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Add your credentials here.
     _myMoipToken = @"";
     _myMoipAccessKey = @"";
     _myPublicKey = @"";

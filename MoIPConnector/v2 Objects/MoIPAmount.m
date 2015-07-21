@@ -33,12 +33,12 @@
     
     NSDictionary* subtotal = dictionary[@"subtotals"];
     if (subtotal) {
-        MoIPSubTotals subtotals;
+        MoIPSubtotals subtotals;
         subtotals.shipping = [NSNumber numberWithCentsString:subtotal[@"shipping"]].floatValue;
         subtotals.adition = [NSNumber numberWithCentsString:subtotal[@"adition"]].floatValue;
         subtotals.discount = [NSNumber numberWithCentsString:subtotal[@"discount"]].floatValue;
         subtotals.items = [NSNumber numberWithCentsString:subtotal[@"items"]].floatValue;
-        _subTotals = subtotals;
+        _subtotals = subtotals;
     }
 }
 
@@ -58,11 +58,11 @@
     if (self.liquid) representation[@"liquid"] = [self.liquid cents];
     if (self.otherReceivers) representation[@"otherReceivers"] = [self.otherReceivers cents];
     if (self.currency) representation[@"currency"] = self.currency;
-    if (self.subTotals.items > 0) {
-        representation[@"subTotals"] = @{@"shipping":[@(self.subTotals.shipping)cents],
-                                         @"adition":[@(self.subTotals.adition)cents],
-                                         @"discount":[@(self.subTotals.discount)cents],
-                                         @"items":[@(self.subTotals.items)cents]};
+    if (self.subtotals.items > 0) {
+        representation[@"subtotals"] = @{@"shipping":[@(self.subtotals.shipping)cents],
+                                         @"adition":[@(self.subtotals.adition)cents],
+                                         @"discount":[@(self.subtotals.discount)cents],
+                                         @"items":[@(self.subtotals.items)cents]};
     }
     return [representation copy];
 }

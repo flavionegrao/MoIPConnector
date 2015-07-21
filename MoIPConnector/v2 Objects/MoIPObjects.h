@@ -19,5 +19,6 @@
 #import "MoIPOnlineDebit.h"
 #import "MoIPHolder.h"
 #import "MoIPTaxDocument.h"
+#import "MoIPAmount.h"
 
 #endif

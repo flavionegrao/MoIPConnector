@@ -18,15 +18,28 @@
     
     if (self && dictionary) {
         [self populateWithDictionary:dictionary];
-    } else {
-        NSAssert(NO, @"Ops...");
     }
-    
     return self;
 }
 
+
 - (void) populateWithDictionary:(NSDictionary*) dictionary {
+    if ([dictionary[@"method"]isEqualToString:@"CREDIT_CARD"]) {
+        self.method = MoIPFundingInstrumentMethodCreditCard;
+        
+    } else if ([dictionary[@"method"]isEqualToString:@"BOLETO"]) {
+        self.method = MoIPFundingInstrumentMethodBoleto;
+        
+    } else if ([dictionary[@"method"]isEqualToString:@"ONLINE_BANK_DEBIT"]) {
+        self.method = MoIPFundingInstrumentOnlineDebit;
+        
+    } else {
+        NSLog(@"%s - Unexpected method: %@",__PRETTY_FUNCTION__, dictionary[@"method"]);
+    }
     
+    _creditCard = [[MoIPCreditCard alloc]initWithDictionary:dictionary[@"creditCard"]];
+    _boleto = [[MoIPBoleto alloc]initWithDictionary:dictionary[@"boleto"]];
+    _onlineDebit = [[MoIPOnlineDebit alloc]initWithDictionary:dictionary[@"onlineDebit"]];
 }
 
 
@@ -41,7 +54,6 @@
     NSMutableDictionary* representation = [NSMutableDictionary dictionary];
     
     switch (self.method) {
-        case MoIPFundingInstrumentMethodCofre:
         case MoIPFundingInstrumentMethodCreditCard:
             representation[@"method"] = @"CREDIT_CARD";
             if (self.creditCard) representation[@"creditCard"] = [self.creditCard dictionaryRepresentation];

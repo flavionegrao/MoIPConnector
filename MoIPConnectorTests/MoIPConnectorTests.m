@@ -73,6 +73,95 @@
     XCTAssertTrue([itemRepresentation2[@"price"] integerValue] == 7300);
 }
 
+- (void) testMoIPHolderObject {
+    MoIPHolder* holder = [MoIPHolder new];
+    holder.fullname = @"João Portador da Silva";
+    holder.birthdate = [NSDate date];
+    holder.taxDocument = [MoIPTaxDocument new];
+    holder.taxDocument.type = MoIPTaxDocumentTypeCPF;
+    holder.taxDocument.number = @"12345679891";
+    holder.phone = MoIPPhoneMake(55, 11, 66778899);
+
+    
+    NSDictionary* holderRepresentation = [holder dictionaryRepresentation];
+    XCTAssertNotNil(holderRepresentation);
+    
+    NSString* birthDate = holderRepresentation[@"birthdate"];
+    XCTAssertTrue(birthDate.length > 0);
+    
+    XCTAssertNotNil(holderRepresentation[@"taxDocument"]);
+    XCTAssertNotNil(holderRepresentation[@"phone"]);
+}
+
+- (void) testMoIPAmountObject {
+    MoIPAmount* amount = [MoIPAmount new];
+    amount.total = @100.54;
+    amount.fees = @45;
+    amount.refunds = @56;
+    amount.liquid = @65;
+    amount.otherReceivers = @100.56;
+    amount.currency = @"BRL";
+    amount.subtotals = MoIPSubtotalsMake(100, 200, 300, 400);
+    
+    NSDictionary* amountRepresentation = [amount dictionaryRepresentation];
+    XCTAssertNotNil(amountRepresentation);
+    
+    XCTAssertNotNil(amountRepresentation[@"total"]);
+    XCTAssertNotNil(amountRepresentation[@"fees"]);
+    XCTAssertNotNil(amountRepresentation[@"refunds"]);
+    XCTAssertNotNil(amountRepresentation[@"liquid"]);
+    XCTAssertNotNil(amountRepresentation[@"otherReceivers"]);
+    XCTAssertNotNil(amountRepresentation[@"currency"]);
+    XCTAssertNotNil(amountRepresentation[@"subtotals"]);
+    
+    MoIPAmount* amount2 = [[MoIPAmount alloc]initWithDictionary:amountRepresentation];
+    XCTAssertNotNil(amount2.total);
+    XCTAssertNotNil(amount2.fees);
+    XCTAssertNotNil(amount2.refunds);
+    XCTAssertNotNil(amount2.liquid);
+    XCTAssertNotNil(amount2.otherReceivers);
+    XCTAssertNotNil(amount2.currency);
+    XCTAssertTrue(amount2.subtotals.shipping == 100);
+    XCTAssertTrue(amount2.subtotals.adition == 200);
+    XCTAssertTrue(amount2.subtotals.discount == 300);
+    XCTAssertTrue(amount2.subtotals.items == 400);
+
+}
+
+
+- (void) testMoIPFundingInstrumentObject {
+    
+    MoIPHolder* holder = [MoIPHolder new];
+    holder.fullname = @"João Portador da Silva";
+    holder.birthdate = [NSDate date];
+    holder.taxDocument = [MoIPTaxDocument new];
+    holder.taxDocument.type = MoIPTaxDocumentTypeCPF;
+    holder.taxDocument.number = @"12345679891";
+    holder.phone = MoIPPhoneMake(55, 11, 66778899);
+    
+    MoIPCreditCard* creditCard = [MoIPCreditCard new];
+    creditCard.expirationMonth = @"05";
+    creditCard.expirationYear = @"2018";
+    creditCard.number = @"5555666677778884";
+    creditCard.cvc = @"123";
+    creditCard.holder = holder;
+    
+    MoIPFundingInstrument* fundingInstrument = [MoIPFundingInstrument new];
+    fundingInstrument.method = MoIPFundingInstrumentMethodCreditCard;
+    fundingInstrument.creditCard = creditCard;
+    
+    NSDictionary* fundingInstrumentRepresentation = [fundingInstrument dictionaryRepresentation];
+    XCTAssertNotNil(fundingInstrumentRepresentation);
+    
+    XCTAssertTrue([fundingInstrumentRepresentation[@"method"]isEqualToString:@"CREDIT_CARD"]);
+    XCTAssertNotNil(fundingInstrumentRepresentation[@"creditCard"]);
+    
+    MoIPFundingInstrument* fundingInstrument2 = [[MoIPFundingInstrument alloc]initWithDictionary:fundingInstrumentRepresentation];
+    XCTAssertNotNil(fundingInstrument2.creditCard);
+    XCTAssertTrue(fundingInstrument2.method == MoIPFundingInstrumentMethodCreditCard);
+
+}
+
 
 - (void) testMoIPOrderObject {
     MoIPOrder* order = [MoIPOrder new];
@@ -205,6 +294,119 @@
         }];
     
         [self waitForExpectationsWithTimeout:30 handler:nil];
+}
+
+
+- (void) testMoIPCofreOperation {
+    
+    /*****
+     1st Payment to enable us to ger the credit card ID from MoIP
+     *****/
+    
+    
+    // Order
+    
+    MoIPItem* item = [MoIPItem new];
+    item.product = @"Box de Seriado - Exterminate!";
+    item.quantity = @1;
+    item.detail = @"Box de seriado com 8 dvds";
+    item.price = @7350;
+    
+    MoIPCustomer* customer = [MoIPCustomer new];
+    customer.ownId = @"OMNICHAT01CUST";
+    customer.fullname = @"João Silva";
+    customer.email = @"joaosilva@email.com";
+    
+    MoIPOrder* order = [MoIPOrder new];
+    order.ownId = @"OMNICHAT01ORD";
+    order.customer = customer;
+    order.items = @[item];
+    
+    
+    // Payment
+    
+    MoIPHolder* holder = [MoIPHolder new];
+    holder.fullname = @"João Portador da Silva";
+    holder.birthdate = [NSDate date];
+    holder.taxDocument = [MoIPTaxDocument new];
+    holder.taxDocument.type = MoIPTaxDocumentTypeCPF;
+    holder.taxDocument.number = @"12345679891";
+    holder.phone = MoIPPhoneMake(55, 11, 66778899);
+    
+    [MoipSDK importPublicKey:self.moipPublicKey];
+    
+    MoIPCreditCard* creditCard = [MoIPCreditCard new];
+    creditCard.expirationMonth = @"05";
+    creditCard.expirationYear = @"2018";
+    creditCard.number = @"5555666677778884";
+    creditCard.cvc = @"123";
+    creditCard.holder = holder;
+    
+    MoIPFundingInstrument* fundingInstrument = [MoIPFundingInstrument new];
+    fundingInstrument.method = MoIPFundingInstrumentMethodCreditCard;
+    fundingInstrument.creditCard = creditCard;
+    
+    MoIPPayment* payment = [MoIPPayment new];
+    payment.installmentCount = @2;
+    payment.fundingInstrument = fundingInstrument;
+    
+    MoipConnector* connector = [[MoipConnector alloc]
+                                initWithEnviroment:MoIPEnvironmentSandBox
+                                token:self.moipToken
+                                accessKey:self.moipAccessKey
+                                publicCertificate:self.moipPublicKey];
+    
+    XCTestExpectation* expectation = [self expectationWithDescription:@"Payment Expectation"];
+    __block NSString* creditCardObjectId;
+    [connector executeOrder:order withPayment:payment completionhandler:^(MoIPOrder *orderAnswer, MoIPPayment *paymentAnwer, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(orderAnswer);
+        XCTAssertNotNil(paymentAnwer);
+        
+        //Cofre
+        creditCardObjectId = paymentAnwer.fundingInstrument.creditCard.objectId;
+        XCTAssertNotNil(creditCardObjectId);
+        
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:30 handler:nil];
+    
+    
+    /*****
+     2nd Payment using the last payment credit cart id - Cofre
+     *****/
+    
+    // Order
+    
+    MoIPOrder* orderUsingCofre = [MoIPOrder new];
+    orderUsingCofre.ownId = @"OMNICHAT01ORD_COFRE";
+    orderUsingCofre.customer = customer;
+    orderUsingCofre.items = @[item];
+    
+    // Payment
+    
+    MoIPCreditCard* creditCardFromCofre = [MoIPCreditCard new];
+    creditCardFromCofre.objectId = creditCardObjectId;
+    creditCardFromCofre.cvc = @"123";
+    
+    MoIPFundingInstrument* fundingInstrumentCofre = [MoIPFundingInstrument new];
+    fundingInstrumentCofre.method = MoIPFundingInstrumentMethodCreditCard;
+    fundingInstrumentCofre.creditCard = creditCardFromCofre;
+    
+    MoIPPayment* paymentFromCofre = [MoIPPayment new];
+    paymentFromCofre.installmentCount = @1;
+    paymentFromCofre.fundingInstrument = fundingInstrumentCofre;
+    
+    XCTestExpectation* expectation2 = [self expectationWithDescription:@"Payment Expectation"];
+    [connector executeOrder:orderUsingCofre withPayment:paymentFromCofre completionhandler:^(MoIPOrder *orderAnswer, MoIPPayment *paymentAnwer, NSError *error) {
+        XCTAssertNil(error);
+        XCTAssertNotNil(orderAnswer);
+        XCTAssertNotNil(paymentAnwer);
+        [expectation2 fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:30 handler:nil];
 }
 
 

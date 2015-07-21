@@ -32,10 +32,9 @@
 }
 
 - (void) populateWithDictionary:(NSDictionary*) dictionary {
-    NSDictionary* amountDictionaty = dictionary[@"amount"];
-    if (amountDictionaty) {
-        _amount = [[MoIPAmount alloc]initWithDictionary:dictionary[@"amount"]];
-    }
+
+    _amount = [[MoIPAmount alloc]initWithDictionary:dictionary[@"amount"]];
+    _fundingInstrument = [[MoIPFundingInstrument alloc]initWithDictionary:dictionary[@"fundingInstrument"]];
     
     NSArray* feesArray = dictionary[@"fees"];
     if (feesArray) {

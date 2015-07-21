@@ -16,8 +16,7 @@
 typedef NS_ENUM(NSInteger, MoIPFundingInstrumentMethod) {
     MoIPFundingInstrumentMethodCreditCard,
     MoIPFundingInstrumentMethodBoleto,
-    MoIPFundingInstrumentOnlineDebit,
-    MoIPFundingInstrumentMethodCofre
+    MoIPFundingInstrumentOnlineDebit
 };
 
 
