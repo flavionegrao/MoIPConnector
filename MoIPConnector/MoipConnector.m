@@ -23,9 +23,6 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
 @property (nonatomic, strong) NSURLSession* session;
 @property (readonly, nonatomic, assign) MoIPEnvironment environement;
 @property (readonly, nonatomic, strong) NSURL* serverURL;
-@property (readonly, nonatomic, strong) NSString* token;
-@property (readonly, nonatomic, strong) NSString* accessKey;
-@property (readonly, nonatomic, strong) NSString* publicCertificate;
 
 @end
 
@@ -60,13 +57,6 @@ NSString* const MoipConnectorErrorDomain = @"br.com.moip.MoipConnectorErrorDomai
         case MoIPEnvironmentProduction: return [NSURL URLWithString:MoIPServerURL];
         case MoIPEnvironmentSandBox: return [NSURL URLWithString:MoIPSandboxServerURL];
     }
-}
-
-- (NSURL*) urlDePagamentoWithToken:(NSString *)tokenDePagamento {
-    NSString* urlString =  [NSString stringWithFormat:@"%@Instrucao.do?token=%@",
-                            [self urlFromMoIPEnvironement:self.environement],
-                            tokenDePagamento];
-    return [NSURL URLWithString:urlString];
 }
 
 #pragma mark - Getter and Setters

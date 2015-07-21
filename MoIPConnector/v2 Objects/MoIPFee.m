@@ -7,6 +7,7 @@
 //
 
 #import "MoIPFee.h"
+#import "NSNumber+MoIP.h"
 
 @implementation MoIPFee
 
@@ -25,7 +26,7 @@
 
 - (void) populateWithDictionary:(NSDictionary*) dictionary {
     _type = dictionary[@"type"];
-    _amount = dictionary[@"amount"];
+    _amount = [NSNumber numberWithCentsString:dictionary[@"amount"]];
 }
 
 
@@ -38,7 +39,7 @@
 - (NSDictionary*) dictionaryRepresentation {
     NSMutableDictionary* representation = [NSMutableDictionary dictionary];
     if (self.type) representation[@"type"] = self.type;
-    if (self.amount) representation[@"amount"] = self.amount;
+    if (self.amount) representation[@"amount"] = [self.amount cents];
     return [representation copy];
 }
 

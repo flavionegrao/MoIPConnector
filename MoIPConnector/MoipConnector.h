@@ -46,6 +46,10 @@ typedef NS_ENUM(NSInteger, MoipConnectorErrorCode) {
 
 @interface MoipConnector : NSObject
 
+@property (readonly, nonatomic, strong) NSString* token;
+@property (readonly, nonatomic, strong) NSString* accessKey;
+@property (readonly, nonatomic, strong) NSString* publicCertificate;
+
 /**
  Initialises an instance ready to process payments with MoIP
  @param enviroment Select between sandbox or production
@@ -69,8 +73,6 @@ typedef NS_ENUM(NSInteger, MoipConnectorErrorCode) {
 - (void) executeOrder:(MoIPOrder*) order
           withPayment:(MoIPPayment*) payment
     completionhandler:(void (^)(MoIPOrder* orderAnswer, MoIPPayment* paymentAnwer, NSError* error))completionBlock;
-
-- (NSURL*) urlDePagamentoWithToken:(NSString*) tokenDePagamento;
 
 
 @end

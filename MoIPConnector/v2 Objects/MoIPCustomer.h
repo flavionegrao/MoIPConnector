@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString* objectId;
 @property (nonatomic, strong) NSDate* createdAt;
 @property (nonatomic, strong) NSString* ownId;
-@property (nonatomic, strong) NSString* fullName;
+@property (nonatomic, strong) NSString* fullname;
 @property (nonatomic, strong) NSString* email;
 @property (nonatomic, strong) NSDictionary* links;
 @property (nonatomic, strong) MoIPTaxDocument* taxDocument;

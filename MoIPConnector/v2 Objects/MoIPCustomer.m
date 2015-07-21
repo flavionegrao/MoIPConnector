@@ -16,8 +16,6 @@
     
     if (self && dictionary) {
         [self populateWithDictionary:dictionary];
-    } else {
-        NSAssert(NO, @"Ops...");
     }
     
     return self;
@@ -28,7 +26,7 @@
     _links = dictionary[@"_links"];
     _createdAt = dictionary[@"createdAt"];
     _email = dictionary[@"email"];
-    _fullName = dictionary[@"fullName"];
+    _fullname = dictionary[@"fullname"];
     _objectId = dictionary[@"id"];
     
     NSDictionary* taxDocumentDictionary = dictionary[@"taxDocument"];
@@ -58,10 +56,25 @@
 
 
 - (NSDictionary*) dictionaryRepresentation {
-    return @{@"ownId":self.ownId,
-             @"fullname":self.fullName,
-             @"email":self.email
-             };
+    NSMutableDictionary* representation = [NSMutableDictionary dictionary];
+    
+    if (self.ownId) representation[@"ownId"] = self.ownId;
+    if (self.links) representation[@"_links"] = self.links;
+    if (self.objectId) representation[@"id"] = self.objectId;
+    if (self.fullname) representation[@"fullname"] = self.fullname;
+    if (self.email) representation[@"email"] = self.email;
+    if (self.createdAt) representation[@"createdAt"] = self.createdAt;
+    if (self.taxDocument) representation[@"taxDocument"] = [self.taxDocument dictionaryRepresentation];
+    
+    
+    return [representation copy];
+}
+
+
+- (NSString*) description {
+    return [NSString stringWithFormat:@"%@ %@",
+            [super description],
+            [self dictionaryRepresentation]];
 }
 
 @end

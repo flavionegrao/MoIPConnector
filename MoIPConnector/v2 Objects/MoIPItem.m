@@ -7,6 +7,7 @@
 //
 
 #import "MoIPItem.h"
+#import "NSNumber+MoIP.h"
 
 @implementation MoIPItem
 
@@ -15,8 +16,6 @@
     
     if (self && dictionary) {
         [self populateWithDictionary:dictionary];
-    } else {
-        NSAssert(NO, @"Ops...");
     }
     
     return self;
@@ -30,7 +29,7 @@
 
 - (void) populateWithDictionary:(NSDictionary*) dictionary {
     _detail = dictionary[@"detail"];
-    _price = @([dictionary[@"price"]floatValue]);
+    _price = [NSNumber numberWithCentsString:dictionary[@"price"]];
     _product = dictionary[@"product"];
     _quantity = @([dictionary[@"quantity"]floatValue]);
 }
@@ -39,9 +38,15 @@
 - (NSDictionary*) dictionaryRepresentation {
     return @{@"detail":self.detail,
              @"quantity":self.quantity,
-             @"price":self.price,
+             @"price":[self.price cents],
              @"product":self.product
              };
+}
+
+- (NSString*) description {
+    return [NSString stringWithFormat:@"%@ %@",
+            [super description],
+            [self dictionaryRepresentation]];
 }
 
 @end

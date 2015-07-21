@@ -56,7 +56,7 @@ static NSString* const PortadorKey = @"Portador";
 #pragma mark - Helpers
 
 - (NSString*) expirationDateStringFormat {
-    return [NSString stringWithFormat:@"%ld/%ld",self.expiracaoMes,self.expiracaoAno];
+    return [NSString stringWithFormat:@"%ld/%ld",(long)self.expiracaoMes, (long) self.expiracaoAno];
 }
 
 - (BOOL) isExpirationDateValid {

@@ -62,6 +62,7 @@
     _objectId = dictionary[@"id"];
     _status = dictionary[@"status"];
     _installmentCount = dictionary[@"installmentCount"];
+    _links = dictionary[@"_links"];
 }
 
 
@@ -80,6 +81,26 @@
     
     if (self.installmentCount) representation[@"installmentCount"] = self.installmentCount;
     if (self.fundingInstrument) representation[@"fundingInstrument"] = [self.fundingInstrument dictionaryRepresentation];
+    
+    if (self.createdAt) representation[@"createdAt"] = self.createdAt;
+    if (self.updatedAt) representation[@"updatedAt"] = self.createdAt;
+    if (self.objectId) representation[@"objectId"] = self.objectId;
+    if (self.status) representation[@"status"] = self.status;
+    if (self.links) representation[@"links"] = self.links;
+    
+    NSMutableArray* events = [[NSMutableArray alloc]initWithCapacity:self.events.count];
+    [self.events enumerateObjectsUsingBlock:^(MoIPEvent* event, NSUInteger idx, BOOL *stop) {
+        [events addObject:[event dictionaryRepresentation]];
+    }];
+    if (events) representation[@"events"] = [events copy];
+    
+    NSMutableArray* fees = [[NSMutableArray alloc]initWithCapacity:self.fees.count];
+    [self.fees enumerateObjectsUsingBlock:^(MoIPFee* fee, NSUInteger idx, BOOL *stop) {
+        [fees addObject:[fee dictionaryRepresentation]];
+    }];
+    if (fees) representation[@"events"] = [fees copy];
+    
+    if (self.amount) representation[@"amount"] = [self.amount dictionaryRepresentation];
     
     return [representation copy];
 }

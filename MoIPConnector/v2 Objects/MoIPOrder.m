@@ -10,6 +10,7 @@
 #import "MoIPCustomer.h"
 #import "MoIPItem.h"
 #import "MoIPAmount.h"
+#import "MoIPEvent.h"
 #import "NSDate+MoIP.h"
 
 @implementation MoIPOrder
@@ -27,30 +28,31 @@
 }
 
 - (void) populateWithDictionary:(NSDictionary*) dictionary {
-    NSDictionary* amountDictionaty = dictionary[@"amount"];
-    if (amountDictionaty) {
-        _amount = [[MoIPAmount alloc]initWithDictionary:dictionary[@"amount"]];
-    }
-    
-    NSDictionary* customerDictionaty = dictionary[@"customer"];
-    if (customerDictionaty) {
-        _customer = [[MoIPCustomer alloc]initWithDictionary:dictionary[@"customer"]];
-    }
+
+    _amount = [[MoIPAmount alloc]initWithDictionary:dictionary[@"amount"]];
+    _customer = [[MoIPCustomer alloc]initWithDictionary:dictionary[@"customer"]];
     
     NSArray* itemsArray = dictionary[@"items"];
-    if (itemsArray) {
-        NSMutableArray* items = [[NSMutableArray alloc]initWithCapacity:itemsArray.count];
-        [itemsArray enumerateObjectsUsingBlock:^(NSDictionary* itemDictionary, NSUInteger idx, BOOL *stop) {
-            MoIPItem* item = [[MoIPItem alloc]initWithDictionary:itemDictionary];
-            [items addObject:item];
-        }];
-        _items = [items copy];
-    }
+    NSMutableArray* items = [[NSMutableArray alloc]initWithCapacity:itemsArray.count];
+    [itemsArray enumerateObjectsUsingBlock:^(NSDictionary* itemDictionary, NSUInteger idx, BOOL *stop) {
+        MoIPItem* item = [[MoIPItem alloc]initWithDictionary:itemDictionary];
+        [items addObject:item];
+    }];
+    _items = [items copy];
+    
+    NSArray* eventsArray = dictionary[@"events"];
+    NSMutableArray* events = [[NSMutableArray alloc]initWithCapacity:eventsArray.count];
+    [eventsArray enumerateObjectsUsingBlock:^(NSDictionary* eventDictionary, NSUInteger idx, BOOL *stop) {
+        MoIPEvent* event = [[MoIPEvent alloc]initWithDictionary:eventDictionary];
+        [events addObject:event];
+    }];
+    _events = [events copy];
     
     _createdAt = [NSDate dateFromString:dictionary[@"createdAt"] withFormat:MoIPDateFormat];
     _objectId = dictionary[@"id"];
     _ownId = dictionary[@"ownId"];
     _status = dictionary[@"status"];
+    _links = dictionary[@"links"];
     
     //TODO
     _receivers = nil;
@@ -70,19 +72,29 @@
 
 
 - (NSDictionary*) dictionaryRepresentation {
+    NSMutableDictionary* representation = [NSMutableDictionary dictionary];
     
-    NSMutableArray* items;
-    if (self.items) {
-        items = [[NSMutableArray alloc]initWithCapacity:self.items.count];
-        [self.items enumerateObjectsUsingBlock:^(MoIPItem* item, NSUInteger idx, BOOL *stop) {
-            [items addObject:[item dictionaryRepresentation]];
-        }];
-    }
+    NSMutableArray* items = [[NSMutableArray alloc]initWithCapacity:self.items.count];
+    [self.items enumerateObjectsUsingBlock:^(MoIPItem* item, NSUInteger idx, BOOL *stop) {
+        [items addObject:[item dictionaryRepresentation]];
+    }];
+    if (items.count > 0) representation[@"items"] = [items copy];
     
-    return @{@"ownId":self.ownId,
-             @"items":[items copy] ?:[NSNull null],
-             @"customer":[self.customer dictionaryRepresentation]
-             };
+    NSMutableArray* events = [[NSMutableArray alloc]initWithCapacity:self.events.count];
+    [self.events enumerateObjectsUsingBlock:^(MoIPItem* item, NSUInteger idx, BOOL *stop) {
+        [events addObject:[item dictionaryRepresentation]];
+    }];
+    if (events.count > 0) representation[@"events"] = [events copy];
+    
+    if (self.customer) representation[@"customer"] = [self.customer dictionaryRepresentation];
+    if (self.amount) representation[@"amount"] = [self.amount dictionaryRepresentation];
+    
+    if (self.ownId) representation[@"ownId"] = self.ownId;
+    if (self.links) representation[@"_links"] = self.links;
+    if (self.status) representation[@"status"] = self.status;
+    if (self.objectId) representation[@"id"] = self.objectId;
+    
+    return [representation copy];
 }
 
 
@@ -100,9 +112,7 @@
 }
 
 - (NSString*) description {
-    return [NSString stringWithFormat:@"%@ %@",
-            [super description],
-            [self dictionaryRepresentation]];
+    return [NSString stringWithFormat:@"%@ %@",[super description],[self dictionaryRepresentation]];
 }
 
 @end
