@@ -16,8 +16,6 @@
     
     if (self && dictionary) {
         [self populateWithDictionary:dictionary];
-    } else {
-        NSAssert(NO, @"Ops...");
     }
     
     return self;

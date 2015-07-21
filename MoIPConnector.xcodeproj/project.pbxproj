@@ -11,6 +11,7 @@
 		7279C0DC1B55225800972482 /* BoletoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DB1B55225800972482 /* BoletoViewController.m */; };
 		7279C0DF1B553DD700972482 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DE1B553DD700972482 /* WebViewController.m */; };
 		7279C0E21B554B1300972482 /* CartaoDeCreditoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0E11B554B1300972482 /* CartaoDeCreditoViewController.m */; };
+		72A420421B5ED8B5001DAF74 /* MoIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A420411B5ED8B5001DAF74 /* MoIPAddress.m */; };
 		72C333741B595070000209DC /* MoIPOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C333731B595070000209DC /* MoIPOrder.m */; };
 		72C333771B595370000209DC /* MoIPItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C333761B595370000209DC /* MoIPItem.m */; };
 		72C3337A1B5953EC000209DC /* MoIPCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C333791B5953EC000209DC /* MoIPCustomer.m */; };
@@ -59,6 +60,8 @@
 		7279C0DE1B553DD700972482 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		7279C0E01B554B1300972482 /* CartaoDeCreditoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartaoDeCreditoViewController.h; sourceTree = "<group>"; };
 		7279C0E11B554B1300972482 /* CartaoDeCreditoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartaoDeCreditoViewController.m; sourceTree = "<group>"; };
+		72A420401B5ED8B5001DAF74 /* MoIPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPAddress.h; sourceTree = "<group>"; };
+		72A420411B5ED8B5001DAF74 /* MoIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPAddress.m; sourceTree = "<group>"; };
 		72C333721B595070000209DC /* MoIPOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPOrder.h; sourceTree = "<group>"; };
 		72C333731B595070000209DC /* MoIPOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPOrder.m; sourceTree = "<group>"; };
 		72C333751B595370000209DC /* MoIPItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPItem.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 		72C333711B595030000209DC /* v2 MoIP Objects */ = {
 			isa = PBXGroup;
 			children = (
+				72A420401B5ED8B5001DAF74 /* MoIPAddress.h */,
+				72A420411B5ED8B5001DAF74 /* MoIPAddress.m */,
 				72C333971B59AA6D000209DC /* MoIPObjects.h */,
 				72C3339F1B5B12A5000209DC /* MoIPSerializable.h */,
 				72C333901B598722000209DC /* MoIPObject.h */,
@@ -390,6 +395,7 @@
 				72C3339B1B59B210000209DC /* MoIPAmount.m in Sources */,
 				72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */,
 				72C3338F1B598582000209DC /* MoIPFee.m in Sources */,
+				72A420421B5ED8B5001DAF74 /* MoIPAddress.m in Sources */,
 				72C333741B595070000209DC /* MoIPOrder.m in Sources */,
 				72C3337A1B5953EC000209DC /* MoIPCustomer.m in Sources */,
 				72C333961B599163000209DC /* MoIPTaxDocument.m in Sources */,

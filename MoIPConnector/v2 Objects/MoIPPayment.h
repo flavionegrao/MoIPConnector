@@ -15,13 +15,17 @@
 
 @interface MoIPPayment : NSObject <MoIPObject,MoIPSerializable>
 
+#pragma mark - New Object Creation
+@property (nonatomic, strong) NSNumber* installmentCount;
+@property (nonatomic, strong) MoIPFundingInstrument* fundingInstrument;
+
+
+#pragma mark - Response
 @property (nonatomic, strong) NSString* objectId;
 @property (nonatomic, strong) NSDate* createdAt;
 @property (nonatomic, strong) NSDate* updatedAt;
 @property (nonatomic, strong) NSString* status;
 @property (nonatomic, strong) MoIPAmount* amount;
-@property (nonatomic, strong) NSNumber* installmentCount;
-@property (nonatomic, strong) MoIPFundingInstrument* fundingInstrument;
 @property (nonatomic, strong) NSArray* fees;
 @property (nonatomic, strong) NSArray* events;
 @property (nonatomic, strong) NSDictionary* links;

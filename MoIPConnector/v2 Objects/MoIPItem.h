@@ -11,9 +11,16 @@
 
 @interface MoIPItem : NSObject <MoIPSerializable>
 
+/// Mandatory
 @property (nonatomic, strong) NSString* detail;
+
+/// Mandatory
 @property (nonatomic, strong) NSNumber* quantity;
+
+/// Mandatory
 @property (nonatomic, strong) NSNumber* price;
+
+/// Mandatory
 @property (nonatomic, strong) NSString* product;
 
 @end

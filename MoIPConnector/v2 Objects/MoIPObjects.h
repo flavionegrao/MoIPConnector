@@ -20,5 +20,6 @@
 #import "MoIPHolder.h"
 #import "MoIPTaxDocument.h"
 #import "MoIPAmount.h"
+#import "MoIPAddress.h"
 
 #endif

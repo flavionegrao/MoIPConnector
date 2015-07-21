@@ -9,6 +9,7 @@
 #import "MoIPHolder.h"
 #import "MoIPTaxDocument.h"
 #import "NSDate+MoIP.h"
+#import "MoIPAddress.h"
 
 @implementation MoIPHolder
 
@@ -25,17 +26,25 @@
     
     if (self && dictionary) {
         [self populateWithDictionary:dictionary];
-    } else {
-        NSAssert(NO, @"Ops...");
     }
     
     return self;
 }
 
 - (void) populateWithDictionary:(NSDictionary*) dictionary {
+    if (dictionary[@"birthdate"]) {
+        _birthdate = [NSDate dateFromString:dictionary[@"birthdate"] withFormat:@"YYYY-MM-dd"];
+    }
+    NSDictionary* phone = dictionary[@"phone"];
+    if (phone) {
+    _phone = MoIPPhoneMake([phone[@"countryCode"]integerValue],
+                           [phone[@"areaCode"]integerValue],
+                           [phone[@"number"]integerValue]);
+    }
     
+    _taxDocument = [[MoIPTaxDocument alloc]initWithDictionary:dictionary[@"taxDocument"]];
+    _billingAddress = [[MoIPAddress alloc]initWithDictionary:dictionary[@"billingAddress"]];
 }
-
 
 
 - (BOOL) validateValuesWithError:(NSError**) error {
@@ -46,6 +55,8 @@
 
 - (NSDictionary*) dictionaryRepresentation {
     NSMutableDictionary* representation = [NSMutableDictionary dictionary];
+    
+    if (self.billingAddress) representation[@"billingAddress"] = [self.billingAddress dictionaryRepresentation];
     
     if (self.fullname) representation[@"fullname"] = self.fullname;
     if (self.birthdate) {

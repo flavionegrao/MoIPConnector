@@ -128,6 +128,40 @@
 
 }
 
+- (void) testMoIPAddressObject {
+    MoIPAddress* address = [MoIPAddress new];
+    address.street = @"Rua XPTO";
+    address.number = @"123";
+    address.complement = @"ap 254";
+    address.district = @"Agua Verde";
+    address.city = @"Curitiba";
+    address.state = @"PR";
+    address.country = @"BRA";
+    address.zipcode = @"80710000";
+    
+    NSDictionary* addressRepresentation = [address dictionaryRepresentation];
+    XCTAssertNotNil(addressRepresentation);
+    
+    XCTAssertNotNil(addressRepresentation[@"street"]);
+    XCTAssertNotNil(addressRepresentation[@"number"]);
+    XCTAssertNotNil(addressRepresentation[@"complement"]);
+    XCTAssertNotNil(addressRepresentation[@"district"]);
+    XCTAssertNotNil(addressRepresentation[@"city"]);
+    XCTAssertNotNil(addressRepresentation[@"state"]);
+    XCTAssertNotNil(addressRepresentation[@"country"]);
+    XCTAssertNotNil(addressRepresentation[@"zipcode"]);
+    
+    MoIPAddress* address2 = [[MoIPAddress alloc]initWithDictionary:addressRepresentation];
+    XCTAssertNotNil(address2.street);
+    XCTAssertNotNil(address2.number);
+    XCTAssertNotNil(address2.complement);
+    XCTAssertNotNil(address2.district);
+    XCTAssertNotNil(address2.city);
+    XCTAssertNotNil(address2.state);
+    XCTAssertNotNil(address2.country);
+    XCTAssertNotNil(address2.zipcode);
+}
+
 
 - (void) testMoIPFundingInstrumentObject {
     

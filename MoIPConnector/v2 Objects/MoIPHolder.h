@@ -22,17 +22,23 @@ static inline MoIPPhone MoIPPhoneMake(NSInteger countryCode, NSInteger areaCode,
     phone.areaCode = areaCode;
     phone.number = number;
     return phone;
-    
 }
 
 
 @class MoIPTaxDocument;
+@class MoIPAddress;
 
 @interface MoIPHolder : NSObject <MoIPSerializable>
 
+#pragma mark - New Object Creation
+
+/// Mandatory
 @property (nonatomic, strong) NSString* fullname;
+
+/// Mandatory for Venda Protegida
 @property (nonatomic, strong) NSDate* birthdate;
 @property (nonatomic, assign) MoIPPhone phone;
 @property (nonatomic, strong) MoIPTaxDocument* taxDocument;
+@property (nonatomic, strong) MoIPAddress* billingAddress;
 
 @end

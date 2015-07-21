@@ -34,6 +34,8 @@ static inline MoIPSubtotals MoIPSubtotalsMake (float shipping, float adition, fl
 @property (nonatomic, strong) NSNumber* refunds;
 @property (nonatomic, strong) NSNumber* liquid;
 @property (nonatomic, strong) NSNumber* otherReceivers;
+
+/// Mandatory
 @property (nonatomic, strong) NSString* currency;
 @property (nonatomic, assign) MoIPSubtotals subtotals;
 
