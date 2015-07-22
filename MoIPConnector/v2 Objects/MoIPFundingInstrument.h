@@ -27,4 +27,6 @@ typedef NS_ENUM(NSInteger, MoIPFundingInstrumentMethod) {
 @property (nonatomic, strong) MoIPBoleto* boleto;
 @property (nonatomic, strong) MoIPOnlineDebit* onlineDebit;
 
+- (NSString*) methodName;
+
 @end

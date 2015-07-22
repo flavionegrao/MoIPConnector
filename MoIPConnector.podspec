@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { "Flavio Negrao Torres" => "flavio@apetis.com" }
 
   s.source           = { :git => "https://github.com/flavionegrao/MoIPConnector.git", :tag => "#{s.version}" }
-  s.source_files     = "MoIPConnector/**"
+  s.source_files     = "MoIPConnector/**/*.{h,m}"
 
   s.ios.deployment_target = '8.0'
   s.requires_arc = true

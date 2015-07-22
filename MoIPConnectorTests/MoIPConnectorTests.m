@@ -208,6 +208,11 @@
     item.price = @73.50;
     order.items = @[item];
     
+    MoIPAmount* amount = [MoIPAmount new];
+    amount.currency = @"BRL";
+    amount.subtotals = MoIPSubtotalsMake(40.2, 10, 10, 0);
+    order.amount = amount;
+    
     MoIPCustomer* customer = [MoIPCustomer new];
     customer.ownId = @"cliente_xyz";
     customer.fullname = @"João Silva";

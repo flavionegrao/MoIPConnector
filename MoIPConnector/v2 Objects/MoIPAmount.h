@@ -22,7 +22,7 @@ static inline MoIPSubtotals MoIPSubtotalsMake (float shipping, float adition, fl
     subTotals.shipping = shipping;
     subTotals.adition = adition;
     subTotals.discount = discount;
-    subTotals.items = items;
+    subTotals.items = items; //Response
     return subTotals;
 }
 

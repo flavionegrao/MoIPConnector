@@ -20,8 +20,6 @@
     
     if (self && dictionary) {
         [self populateWithDictionary:dictionary];
-    } else {
-        NSAssert(NO, @"Ops...");
     }
     
     return self;
@@ -67,7 +65,16 @@
 
 
 - (BOOL) validateValuesWithError:(NSError**) error {
-    return YES;
+    if (self.items.count > 0
+        && self.amount
+        && self.ownId
+        && self.customer) {
+        return YES;
+        
+    } else {
+        if (error) [NSError errorWithDomain:@"MoIPConnectorErrorDomain" code:0 userInfo:@{NSLocalizedDescriptionKey:@"Missing mandatoty properties"}];
+        return nil;
+    }
 }
 
 

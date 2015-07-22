@@ -58,12 +58,11 @@
     if (self.liquid) representation[@"liquid"] = [self.liquid cents];
     if (self.otherReceivers) representation[@"otherReceivers"] = [self.otherReceivers cents];
     if (self.currency) representation[@"currency"] = self.currency;
-    if (self.subtotals.items > 0) {
-        representation[@"subtotals"] = @{@"shipping":[@(self.subtotals.shipping)cents],
-                                         @"adition":[@(self.subtotals.adition)cents],
-                                         @"discount":[@(self.subtotals.discount)cents],
-                                         @"items":[@(self.subtotals.items)cents]};
-    }
+    
+    representation[@"subtotals"] = @{@"shipping":[@(self.subtotals.shipping)cents],
+                                     @"adition":[@(self.subtotals.adition)cents],
+                                     @"discount":[@(self.subtotals.discount)cents],
+                                     @"items":[@(self.subtotals.items)cents]};
     return [representation copy];
 }
 

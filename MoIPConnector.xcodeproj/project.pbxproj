@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		724F58211B5E760B002D6995 /* NSNumber+MoIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 724F58201B5E760B002D6995 /* NSNumber+MoIP.m */; };
+		725E740A1B603ED600E1E36D /* MoipSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725E74091B603ED600E1E36D /* MoipSDK.framework */; };
+		725E740B1B603F0800E1E36D /* MoipSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725E74091B603ED600E1E36D /* MoipSDK.framework */; };
 		7279C0DC1B55225800972482 /* BoletoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DB1B55225800972482 /* BoletoViewController.m */; };
 		7279C0DF1B553DD700972482 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0DE1B553DD700972482 /* WebViewController.m */; };
 		7279C0E21B554B1300972482 /* CartaoDeCreditoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7279C0E11B554B1300972482 /* CartaoDeCreditoViewController.m */; };
@@ -26,7 +28,6 @@
 		72C333961B599163000209DC /* MoIPTaxDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C333951B599163000209DC /* MoIPTaxDocument.m */; };
 		72C3339B1B59B210000209DC /* MoIPAmount.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3339A1B59B210000209DC /* MoIPAmount.m */; };
 		72C3339E1B59C00D000209DC /* NSDate+MoIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3339D1B59C00D000209DC /* NSDate+MoIP.m */; };
-		72C333B21B5C1886000209DC /* MoipSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C333B11B5C1886000209DC /* MoipSDK.framework */; };
 		72D91C431B51DAC300F0DB9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C421B51DAC300F0DB9E /* main.m */; };
 		72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C451B51DAC300F0DB9E /* AppDelegate.m */; };
 		72D91C4C1B51DAC300F0DB9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4A1B51DAC300F0DB9E /* Main.storyboard */; };
@@ -34,11 +35,6 @@
 		72D91C511B51DAC300F0DB9E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D91C4F1B51DAC300F0DB9E /* LaunchScreen.xib */; };
 		72D91C5D1B51DAC300F0DB9E /* MoIPConnectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C5C1B51DAC300F0DB9E /* MoIPConnectorTests.m */; };
 		72D91C691B51DC6400F0DB9E /* MoipConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C681B51DC6400F0DB9E /* MoipConnector.m */; };
-		72D91C6C1B51DCC800F0DB9E /* MoIPInfoDePagamento.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C6B1B51DCC800F0DB9E /* MoIPInfoDePagamento.m */; };
-		72D91C6F1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C6E1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m */; };
-		72D91C721B51DD9800F0DB9E /* MoIPStatusDoPagamento.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C711B51DD9800F0DB9E /* MoIPStatusDoPagamento.m */; };
-		72D91C751B52BF3000F0DB9E /* MoIPCartaoDeCredito.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C741B52BF3000F0DB9E /* MoIPCartaoDeCredito.m */; };
-		72D91C781B52C07000F0DB9E /* MoIPPortadorDoCartao.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D91C771B52C07000F0DB9E /* MoIPPortadorDoCartao.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +50,7 @@
 /* Begin PBXFileReference section */
 		724F581F1B5E760B002D6995 /* NSNumber+MoIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MoIP.h"; sourceTree = "<group>"; };
 		724F58201B5E760B002D6995 /* NSNumber+MoIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MoIP.m"; sourceTree = "<group>"; };
+		725E74091B603ED600E1E36D /* MoipSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoipSDK.framework; path = "MoIPConnector/moip-sdk-ios-framework/MoipSDK.framework"; sourceTree = "<group>"; };
 		7279C0DA1B55225800972482 /* BoletoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoletoViewController.h; sourceTree = "<group>"; };
 		7279C0DB1B55225800972482 /* BoletoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoletoViewController.m; sourceTree = "<group>"; };
 		7279C0DD1B553DD700972482 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -93,7 +90,6 @@
 		72C3339C1B59C00D000209DC /* NSDate+MoIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MoIP.h"; sourceTree = "<group>"; };
 		72C3339D1B59C00D000209DC /* NSDate+MoIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MoIP.m"; sourceTree = "<group>"; };
 		72C3339F1B5B12A5000209DC /* MoIPSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoIPSerializable.h; sourceTree = "<group>"; };
-		72C333B11B5C1886000209DC /* MoipSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoipSDK.framework; path = "moip-sdk-ios-framework/MoipSDK.framework"; sourceTree = "<group>"; };
 		72D91C3D1B51DAC300F0DB9E /* MoIPConnector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoIPConnector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72D91C411B51DAC300F0DB9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72D91C421B51DAC300F0DB9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,16 +103,6 @@
 		72D91C5C1B51DAC300F0DB9E /* MoIPConnectorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoIPConnectorTests.m; sourceTree = "<group>"; };
 		72D91C671B51DC6400F0DB9E /* MoipConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoipConnector.h; sourceTree = "<group>"; };
 		72D91C681B51DC6400F0DB9E /* MoipConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoipConnector.m; sourceTree = "<group>"; };
-		72D91C6A1B51DCC800F0DB9E /* MoIPInfoDePagamento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPInfoDePagamento.h; sourceTree = "<group>"; };
-		72D91C6B1B51DCC800F0DB9E /* MoIPInfoDePagamento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPInfoDePagamento.m; sourceTree = "<group>"; };
-		72D91C6D1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPMetodoDePagamento.h; sourceTree = "<group>"; };
-		72D91C6E1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPMetodoDePagamento.m; sourceTree = "<group>"; };
-		72D91C701B51DD9800F0DB9E /* MoIPStatusDoPagamento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPStatusDoPagamento.h; sourceTree = "<group>"; };
-		72D91C711B51DD9800F0DB9E /* MoIPStatusDoPagamento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPStatusDoPagamento.m; sourceTree = "<group>"; };
-		72D91C731B52BF3000F0DB9E /* MoIPCartaoDeCredito.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPCartaoDeCredito.h; sourceTree = "<group>"; };
-		72D91C741B52BF3000F0DB9E /* MoIPCartaoDeCredito.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPCartaoDeCredito.m; sourceTree = "<group>"; };
-		72D91C761B52C07000F0DB9E /* MoIPPortadorDoCartao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoIPPortadorDoCartao.h; sourceTree = "<group>"; };
-		72D91C771B52C07000F0DB9E /* MoIPPortadorDoCartao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoIPPortadorDoCartao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72C333B21B5C1886000209DC /* MoipSDK.framework in Frameworks */,
+				725E740A1B603ED600E1E36D /* MoipSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725E740B1B603F0800E1E36D /* MoipSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +178,7 @@
 		72D91C341B51DAC300F0DB9E = {
 			isa = PBXGroup;
 			children = (
-				72C333B11B5C1886000209DC /* MoipSDK.framework */,
+				725E74091B603ED600E1E36D /* MoipSDK.framework */,
 				72D91C661B51DB8000F0DB9E /* MoIPConnector */,
 				72D91C3F1B51DAC300F0DB9E /* MoIPConnectorDemo */,
 				72D91C591B51DAC300F0DB9E /* MoIPConnectorTests */,
@@ -260,26 +247,8 @@
 				72D91C671B51DC6400F0DB9E /* MoipConnector.h */,
 				72D91C681B51DC6400F0DB9E /* MoipConnector.m */,
 				72C333711B595030000209DC /* v2 MoIP Objects */,
-				72D91C791B53FFF700F0DB9E /* v1 MoIP Objects */,
 			);
 			path = MoIPConnector;
-			sourceTree = "<group>";
-		};
-		72D91C791B53FFF700F0DB9E /* v1 MoIP Objects */ = {
-			isa = PBXGroup;
-			children = (
-				72D91C701B51DD9800F0DB9E /* MoIPStatusDoPagamento.h */,
-				72D91C711B51DD9800F0DB9E /* MoIPStatusDoPagamento.m */,
-				72D91C6A1B51DCC800F0DB9E /* MoIPInfoDePagamento.h */,
-				72D91C6B1B51DCC800F0DB9E /* MoIPInfoDePagamento.m */,
-				72D91C6D1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.h */,
-				72D91C6E1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m */,
-				72D91C731B52BF3000F0DB9E /* MoIPCartaoDeCredito.h */,
-				72D91C741B52BF3000F0DB9E /* MoIPCartaoDeCredito.m */,
-				72D91C761B52C07000F0DB9E /* MoIPPortadorDoCartao.h */,
-				72D91C771B52C07000F0DB9E /* MoIPPortadorDoCartao.m */,
-			);
-			name = "v1 MoIP Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,15 +351,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72D91C6C1B51DCC800F0DB9E /* MoIPInfoDePagamento.m in Sources */,
 				72C333891B5984E3000209DC /* MoIPBoleto.m in Sources */,
 				724F58211B5E760B002D6995 /* NSNumber+MoIP.m in Sources */,
 				7279C0DF1B553DD700972482 /* WebViewController.m in Sources */,
-				72D91C751B52BF3000F0DB9E /* MoIPCartaoDeCredito.m in Sources */,
 				72C333931B598C2F000209DC /* MoIPHolder.m in Sources */,
 				72C333771B595370000209DC /* MoIPItem.m in Sources */,
-				72D91C721B51DD9800F0DB9E /* MoIPStatusDoPagamento.m in Sources */,
-				72D91C6F1B51DCDC00F0DB9E /* MoIPMetodoDePagamento.m in Sources */,
 				72C3339E1B59C00D000209DC /* NSDate+MoIP.m in Sources */,
 				72C3339B1B59B210000209DC /* MoIPAmount.m in Sources */,
 				72D91C461B51DAC300F0DB9E /* AppDelegate.m in Sources */,
@@ -403,7 +368,6 @@
 				72D91C691B51DC6400F0DB9E /* MoipConnector.m in Sources */,
 				72C333861B5984BA000209DC /* MoIPCreditCard.m in Sources */,
 				7279C0E21B554B1300972482 /* CartaoDeCreditoViewController.m in Sources */,
-				72D91C781B52C07000F0DB9E /* MoIPPortadorDoCartao.m in Sources */,
 				72C3337D1B598186000209DC /* MoIPEvent.m in Sources */,
 				7279C0DC1B55225800972482 /* BoletoViewController.m in Sources */,
 				72C3338C1B598510000209DC /* MoIPOnlineDebit.m in Sources */,
@@ -537,6 +501,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/moip-sdk-ios-framework",
+					"$(PROJECT_DIR)/MoIPConnector/moip-sdk-ios-framework",
 				);
 				INFOPLIST_FILE = MoIPConnectorDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -551,6 +516,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/moip-sdk-ios-framework",
+					"$(PROJECT_DIR)/MoIPConnector/moip-sdk-ios-framework",
 				);
 				INFOPLIST_FILE = MoIPConnectorDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -566,6 +532,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/moip-sdk-ios-framework",
+					"$(PROJECT_DIR)/MoIPConnector/moip-sdk-ios-framework",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -586,6 +553,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/moip-sdk-ios-framework",
+					"$(PROJECT_DIR)/MoIPConnector/moip-sdk-ios-framework",
 				);
 				INFOPLIST_FILE = MoIPConnectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

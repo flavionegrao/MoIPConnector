@@ -76,6 +76,15 @@
     return [representation copy];
 }
 
+- (NSString*) methodName {
+    switch (self.method) {
+        case MoIPFundingInstrumentMethodCreditCard: return [NSString stringWithFormat:@"Cartão final %@",self.creditCard.last4];
+        case MoIPFundingInstrumentMethodBoleto: return @"Boleto";
+        case MoIPFundingInstrumentOnlineDebit: return @"Debito Online";
+    }
+}
+
+
 - (NSString*) description {
     return [NSString stringWithFormat:@"%@",[self dictionaryRepresentation]];
 }

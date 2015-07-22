@@ -8,6 +8,7 @@
 
 #import "MoIPCreditCard.h"
 #import "MoIPHolder.h"
+//#import "MoipSDK.h"
 
 @implementation MoIPCreditCard
 
@@ -39,13 +40,14 @@
 - (NSDictionary*) dictionaryRepresentation {
     NSMutableDictionary* representation = [NSMutableDictionary dictionary];
     
-    representation[@"hash"] = [MoipSDK encryptCreditCard:self];
-    
-    if (self.holder) representation[@"holder"] = [self.holder dictionaryRepresentation];
-    if (self.objectId) representation[@"id"] = self.objectId;
-    if (self.last4) representation[@"last4"] = self.last4;
-    if (self.first6) representation[@"first6"] = self.first6;
-    if (self.brand) representation[@"brand"] = self.brand;
+    if (self.objectId) {
+        representation[@"id"] = self.objectId;
+        if (self.cvc) representation[@"cvc"] = self.cvc;
+        
+    } else {
+        representation[@"hash"] = [MoipSDK encryptCreditCard:self];
+        if (self.holder) representation[@"holder"] = [self.holder dictionaryRepresentation];
+    }
     
     return [representation copy];
 }
